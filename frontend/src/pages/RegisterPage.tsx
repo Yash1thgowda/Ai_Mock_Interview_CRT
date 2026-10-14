@@ -59,7 +59,7 @@ export const RegisterPage: React.FC = () => {
             <Bot className="h-6 w-6" />
           </div>
           <h2 className="text-2xl font-semibold text-ink tracking-tight">Create Account</h2>
-          <p className="text-xs sm:text-sm text-ink-soft mt-1">Start practicing with our Adaptive AI Interviewer</p>
+          <p className="text-xs sm:text-sm text-ink-soft mt-1">Start practicing with Help Hire</p>
         </div>
 
         {error && (

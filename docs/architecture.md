@@ -1,7 +1,7 @@
-# Adaptive AI Mock Interview System — Architecture Documentation
+# Help Hire — Architecture Documentation
 
 ## 1. System Overview
-The **Adaptive AI Mock Interview System** is an end-to-end full-stack web application designed for students and working software professionals to conduct realistic, audio-visual technical interviews. 
+The **Help Hire** system is an end-to-end full-stack web application designed for students and working software professionals to conduct realistic, audio-visual technical interviews. 
 
 The system relies on an **Orchestrator Architecture** with a strict rule: **AI Agents never call each other directly**. All agent coordination, state transitions, speech processing, and database persistence are controlled exclusively by the **Central Interview Orchestrator**.
 

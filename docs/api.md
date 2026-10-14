@@ -1,4 +1,4 @@
-# API Specification — Adaptive AI Mock Interview System
+# API Specification — Help Hire
 
 Base URL: `/api/v1`
 

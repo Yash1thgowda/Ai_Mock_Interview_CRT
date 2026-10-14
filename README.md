@@ -1,4 +1,4 @@
-# Adaptive AI Mock Interview System
+# Help Hire
 
 A complete full-stack web application for conducting realistic, AI-powered mock interviews through real-time audio and webcam video feeds. Features resume parsing, dynamic question planning, a trained NLP voice-interaction agent, deterministic adaptive difficulty scaling, evidence-based rubric scoring, and downloadable PDF performance reports.
 

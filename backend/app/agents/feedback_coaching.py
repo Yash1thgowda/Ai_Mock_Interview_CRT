@@ -117,7 +117,7 @@ class FeedbackCoachingAgent:
 
         c.setFillColor(colors.white)
         c.setFont("Helvetica-Bold", 20)
-        c.drawString(40, height - 48, "Adaptive AI Mock Interview Report")
+        c.drawString(40, height - 48, "Help Hire Performance Report")
 
         c.setFont("Helvetica", 10)
         c.drawString(40, height - 68, f"Session ID: {session_id} | Target Role: {report_data.get('target_role', 'Engineering')}")

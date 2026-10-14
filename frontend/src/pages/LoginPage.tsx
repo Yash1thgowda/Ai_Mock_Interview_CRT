@@ -60,7 +60,7 @@ export const LoginPage: React.FC = () => {
             <Bot className="h-6 w-6" />
           </div>
           <h2 className="text-2xl font-semibold text-ink tracking-tight">Welcome Back</h2>
-          <p className="text-xs sm:text-sm text-ink-soft mt-1">Sign in to your adaptive mock interview portal</p>
+          <p className="text-xs sm:text-sm text-ink-soft mt-1">Sign in to your Help Hire portal</p>
         </div>
 
         {error && (

@@ -45,7 +45,7 @@ export const LandingPage: React.FC = () => {
 
         <div className="order-2 text-center lg:order-none lg:text-left">
           <p className="inline-flex items-center rounded-full bg-lav-100 px-3 py-1 text-xs font-medium text-lav-700">
-            AI interview practice
+            Help Hire
           </p>
           <h1 className="mt-5 text-4xl font-semibold leading-[1.1] tracking-tight text-ink sm:text-5xl">
             Practice interviews with a calm, friendly buddy.

@@ -3,7 +3,7 @@ from typing import List
 import os
 
 class Settings(BaseSettings):
-    PROJECT_NAME: str = "Adaptive AI Mock Interview System"
+    PROJECT_NAME: str = "Help Hire"
     VERSION: str = "1.0.0"
     API_V1_PREFIX: str = "/api/v1"
     

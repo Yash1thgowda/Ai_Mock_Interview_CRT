@@ -23,13 +23,12 @@ export const Navbar: React.FC = () => {
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-cream/85 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:px-6 lg:px-8">
-        <Link to="/" aria-label="Adaptive AI Mock Interview, home" className="flex shrink-0 items-center gap-3 rounded-xl">
+        <Link to="/" aria-label="Help Hire, home" className="flex shrink-0 items-center gap-3 rounded-xl">
           <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-lav-100 text-lav-700">
             <Bot className="h-5 w-5" />
           </div>
           <div className="leading-tight">
-            <span className="hidden text-base font-semibold tracking-tight text-ink min-[430px]:inline">Adaptive AI</span>
-            <span className="ml-1.5 hidden text-xs font-medium text-mute sm:inline">Mock Interview</span>
+            <span className="text-base font-semibold tracking-tight text-ink">Help Hire</span>
           </div>
         </Link>
 
