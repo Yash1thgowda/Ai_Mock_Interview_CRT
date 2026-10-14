@@ -1,0 +1,195 @@
+@import "tailwindcss";
+
+/*
+  Design tokens — soft, warm, minimal.
+  Utilities generated from these: bg-cream, bg-paper, bg-sand, border-line,
+  text-ink, text-ink-soft, text-mute, bg-sage-100, text-sage-700, etc.
+*/
+@theme {
+  --font-sans: "Figtree", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* Surfaces */
+  --color-cream: #faf7f2;
+  --color-paper: #fffefb;
+  --color-sand: #f4f0e9;
+  --color-line: #ebe5da;
+  --color-line-strong: #ddd5c7;
+
+  /* Text */
+  --color-ink: #2d2d32;
+  --color-ink-soft: #5a5a63;
+  --color-mute: #6d6d76;
+
+  /* Primary accent: muted sage */
+  --color-sage-50: #f1f6f2;
+  --color-sage-100: #e6efe9;
+  --color-sage-200: #d5e3da;
+  --color-sage-300: #bfd2c6;
+  --color-sage-500: #7fa08c;
+  --color-sage-600: #547a62;
+  --color-sage-700: #44654f;
+
+  /* Secondary accent: dusty lavender */
+  --color-lav-50: #f6f4fb;
+  --color-lav-100: #ece8f6;
+  --color-lav-200: #ddd6ef;
+  --color-lav-300: #c9c0e6;
+  --color-lav-700: #5e5498;
+
+  /* Secondary accent: pale peach */
+  --color-peach-50: #fff5ee;
+  --color-peach-100: #fde8d9;
+  --color-peach-200: #f9d6bf;
+  --color-peach-300: #f5c9ab;
+  --color-peach-700: #94552f;
+
+  --shadow-soft: 0 1px 2px rgba(70, 58, 40, 0.04), 0 6px 20px rgba(70, 58, 40, 0.05);
+  --shadow-lift: 0 2px 4px rgba(70, 58, 40, 0.05), 0 12px 32px rgba(70, 58, 40, 0.09);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-cream text-ink antialiased font-sans min-h-screen;
+  }
+
+  ::selection {
+    background: var(--color-sage-200);
+    color: var(--color-ink);
+  }
+
+  /* Visible, consistent keyboard focus */
+  :where(a, button, input, select, textarea, summary, [role="button"], [tabindex]):focus-visible {
+    outline: 2px solid var(--color-sage-600);
+    outline-offset: 2px;
+  }
+
+  input,
+  select,
+  textarea {
+    color: var(--color-ink);
+  }
+
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]),
+  select,
+  textarea {
+    background-color: var(--color-paper);
+    border-color: var(--color-line-strong);
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--color-mute);
+    opacity: 0.8;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+/* Soft scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-line-strong);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c9bfae;
+}
+
+/* ------------------------------------------------------------------ */
+/* Robot companion motion                                              */
+/* ------------------------------------------------------------------ */
+
+@keyframes robot-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+@keyframes robot-shadow {
+  0%, 100% { transform: scaleX(1); opacity: 0.55; }
+  50% { transform: scaleX(0.86); opacity: 0.35; }
+}
+
+@keyframes robot-hop {
+  0% { transform: translateY(0); }
+  35% { transform: translateY(-14px); }
+  70% { transform: translateY(0); }
+  85% { transform: translateY(-4px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes robot-wave {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-38deg); }
+  75% { transform: rotate(-22deg); }
+}
+
+@keyframes robot-glow {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 1; }
+}
+
+@keyframes bubble-in {
+  from { opacity: 0; transform: translateY(10px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.robot-float { animation: robot-float 5s ease-in-out infinite; }
+.robot-hop { animation: robot-hop 0.7s ease-out 1; }
+.robot-ground-shadow {
+  transform-origin: center;
+  animation: robot-shadow 5s ease-in-out infinite;
+}
+.robot-arm-wave {
+  transform-box: fill-box;
+  transform-origin: 50% 8%;
+  animation: robot-wave 0.9s ease-in-out 1;
+}
+.robot-bulb { animation: robot-glow 3.2s ease-in-out infinite; }
+.robot-eye {
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: transform 0.12s ease-out;
+}
+.robot-eye[data-blink="true"] { transform: scaleY(0.12); }
+.robot-head {
+  transform-box: fill-box;
+  transform-origin: 50% 90%;
+  transform: rotate(calc(var(--look-x, 0) * 3deg))
+    translate(calc(var(--look-x, 0) * 2px), calc(var(--look-y, 0) * 1.5px));
+  transition: transform 0.3s ease-out;
+}
+.robot-face {
+  transform: translate(calc(var(--look-x, 0) * 5px), calc(var(--look-y, 0) * 3px));
+  transition: transform 0.25s ease-out;
+}
+.bubble-enter { animation: bubble-in 0.45s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .robot-float,
+  .robot-hop,
+  .robot-ground-shadow,
+  .robot-arm-wave,
+  .robot-bulb,
+  .bubble-enter {
+    animation: none !important;
+  }
+  .robot-head,
+  .robot-face,
+  .robot-eye {
+    transition: none !important;
+  }
+}
